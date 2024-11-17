@@ -158,11 +158,33 @@ ul {
     color: black; /* Make the active link color black */
 }
 
+.students-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
 .student {
-    display: flex;
-    align-items: center;
+    text-align: center;
+}
+
+.student-pic {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 10px;
     margin-bottom: 10px;
 }
+
+.section-title {
+    font-size: 1.5em;
+    color: #003366;
+    margin-top: 30px;
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 5px;
+}
+
 
 .student img {
     width: 100px; /* Adjust the size as needed */
