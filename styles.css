@@ -20,26 +20,14 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.sidebar {
-    width: 250px;
-    background-color: #eaeaea;
-    padding: 20px;
-    border-right: 1px solid #ddd;
-}
 
 .content {
     flex: 1;
     padding: 20px;
+    margin-left: 250px; 
 }
 
-.sidebar {
-    width: 250px;
-    background-color: #eaeaea;
-    padding: 20px;
-    border-right: 1px solid #ddd;
-    height: 110vh; /* Extend the sidebar to the full height of the viewport */
-    box-sizing: border-box; /* Include padding in the total height */
-}
+
 
 
 .sidebar h2 {
@@ -60,23 +48,23 @@ body {
     padding-bottom: 5px;
 }
 
-.sidebar nav ul {
+.sidebar-container nav ul {
     list-style-type: none;
     padding-left: 0;
 }
 
-.sidebar nav ul li {
+.sidebar-container nav ul li {
     margin-bottom: 10px;
 }
 
-.sidebar nav ul li a {
+.sidebar-container nav ul li a {
     text-decoration: none;
     color: #0056b3;
     font-weight: bold;
     transition: color 0.3s;
 }
 
-.sidebar nav ul li a:hover {
+.sidebar-container nav ul li a:hover {
     color: #0073e6;
 }
 
@@ -154,7 +142,7 @@ ul {
     height: auto;
 }
 
-.sidebar nav ul li a.active {
+.sidebar-container nav ul li a.active {
     color: black; /* Make the active link color black */
 }
 
@@ -238,4 +226,325 @@ ul {
 
 .investigator-details a:hover {
     text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+
+    .content {
+        flex: 1;
+        padding: 20px;
+        margin-left: 0px; 
+    }
+    
+    .investigator-pic {
+        width: 80px;
+        height: 80px;
+    }
+
+    .student-pic {
+        width: 60px;
+        height: 60px;
+    }
+
+    .section-title {
+        font-size: 1em;
+    }
+}
+
+
+.sidebar {
+    padding: 20px;
+}
+
+/* Hamburger icon styles */
+/* General sidebar styles */
+.sidebar-container {
+    width: 250px;
+    background-color: #eaeaea;
+    padding: 20px;
+    border-right: 1px solid #ddd;
+    height: 110vh; /* Extend the sidebar to the full height of the viewport */
+    box-sizing: border-box; /* Include padding in the total height */
+    position: fixed;
+
+}
+
+/* Hamburger icon styles */
+.hamburger {
+    font-size: 30px;
+    cursor: pointer;
+    position: fixed;
+    top: 15px;
+    right: 20px;
+    z-index: 1100;
+    display: none; /* Hidden by default */
+}
+
+/* Mobile styles: Hide the sidebar and show the hamburger icon */
+@media (max-width: 768px) {
+    .sidebar-container {
+        transform: translateX(-100%); /* Hide the sidebar off-screen */
+    }
+
+    .sidebar-container.open {
+        transform: translateX(0); /* Slide the sidebar into view */
+    }
+
+    .hamburger {
+        display: block; /* Show the hamburger icon */
+    }
+}
+
+
+
+/* Main publications section */
+.publications-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+.section-header {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+}
+
+.publication {
+    margin-bottom: 20px;
+}
+
+
+.section-title {
+    font-size: 2em;
+    color: #0056b3;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #0056b3;
+    padding-bottom: 5px;
+}
+
+.copyright, .publication-summary {
+    font-size: 0.9em;
+    margin-bottom: 20px;
+}
+
+.highlight {
+    color: #d9534f;
+    font-weight: bold;
+}
+
+.csrankings-link {
+    color: #0073e6;
+    text-decoration: none;
+}
+
+.csrankings-link:hover {
+    text-decoration: underline;
+}
+
+/* Publication item styling */
+.publication {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 20px;
+}
+
+.publication:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.publication-image {
+    width: 150px;
+    height: auto;
+    border-radius: 5px;
+    margin-right: 20px;
+}
+
+.publication-details {
+    flex: 1;
+}
+
+.publication-details h3 {
+    font-size: 1.2em;
+    color: #0056b3;
+    margin-bottom: 5px;
+}
+
+.publication-details p {
+    font-size: 0.95em;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+.link {
+    font-size: 0.9em;
+    color: #0073e6;
+    text-decoration: none;
+    margin-right: 10px;
+    transition: color 0.3s;
+}
+
+.link:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+/* Media queries for responsiveness */
+@media (max-width: 768px) {
+    .publication {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .publication-image {
+        width: 100%;
+        height: auto;
+        margin-bottom: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .publications-section {
+        padding: 10px;
+    }
+
+    .section-title {
+        font-size: 1.5em;
+    }
+
+    .publication-details h3 {
+        font-size: 1em;
+    }
+
+    .publication-details p {
+        font-size: 0.85em;
+    }
+
+    .link {
+        font-size: 0.85em;
+    }
+}
+
+
+
+
+/* Header Section */
+.header-section {
+    background-color: #2d3e50;
+    text-align: center;
+    padding: 20px;
+}
+
+.header-title {
+    color: white;
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+/* Section Titles */
+.section-title {
+    font-size: 1.8rem;
+    color: #2d3e50;
+    font-weight: bold;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #2d3e50;
+    padding-bottom: 5px;
+}
+
+/* Bullet Styling */
+.bullet {
+    display: inline-block; /* Inline-block to make it behave like a bullet */
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: #2d3e50;
+    margin-right: 10px; /* Adds space between the bullet and text */
+}
+
+.membership-item, .symposium-chair-item, .tpc-work-item, .journal-paper-review-item, .conference-paper-review-item {
+    display: flex;
+    align-items: center; /* Aligns the text and bullet vertically */
+    gap: 10px; /* Adds consistent space between the bullet and text */
+    margin-bottom: 8px; /* Space between list items */
+    font-size: 1.1rem;
+}
+
+/* Remove position: relative from list items */
+.membership-item, .symposium-chair-item, .tpc-work-item, .journal-paper-review-item, .conference-paper-review-item {
+    position: static; /* Ensures items are not absolutely positioned */
+}
+
+/* Membership Section */
+.membership-section ul,
+.symposium-chair-section ul,
+.tpc-work-section ul,
+.journal-paper-reviews-section ul,
+.conference-paper-reviews-section ul {
+    list-style-type: none;
+    padding-left: 0; /* Remove default padding */
+    margin: 0;
+}
+
+.card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    padding: 20px;
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card h2 {
+    font-size: 1.8rem;
+    color: #2d3e50;
+    margin-top: 0;
+}
+
+.card p {
+    margin: 10px 0;
+}
+
+/* Modal styling */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    overflow: auto;
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 600px;
+    position: relative;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 1.5rem;
+    cursor: pointer;
 }
