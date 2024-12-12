@@ -295,7 +295,26 @@ ul {
     }
 }
 
+.collapsible-content {
+    margin-bottom: 20px;
+  }
+  
+  .collapsible-content.collapsed {
+    display: none;
+  }
+  
+  .collapsible-header {
+    cursor: pointer;
+    user-select: none;
+  }
 
+  .toggle-indicator {
+    font-size: 0.6em;
+    color: #555;
+    margin-left: 5px;
+  }
+  
+  
 
 /* Main publications section */
 .publications-section {
