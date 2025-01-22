@@ -49,12 +49,7 @@ window.onclick = function(event) {
 // Call the function to load the sidebar
 loadSidebar();
 document.addEventListener('DOMContentLoaded', function() {
-    // Initially, if you want them all open, do nothing here.
-    // If you want them all collapsed initially, add .collapsed to all .collapsible-content in HTML
-    // or do it dynamically:
-    // document.querySelectorAll('.collapsible-content').forEach(el => el.classList.add('collapsed'));
-  
-    // Add click listener to each section header
+
     document.querySelectorAll('.collapsible-header').forEach(header => {
       header.addEventListener('click', () => {
         const content = header.parentNode.nextElementSibling;
